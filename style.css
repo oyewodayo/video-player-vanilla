@@ -1,11 +1,26 @@
-
+body{
+    margin: 0;
+}
 .video-container{
     position: relative;
     width: 90%;
     display: flex;
     justify-content: center;
     margin-inline: auto;
+    background-color: black;
 }
+
+.video-container.theater, .video-container.fullscreen{
+    max-width: initial;
+    width: 100%;
+}
+.video-container.video-container.theater{
+    max-height: 90vh;
+}
+.video-container.video-container.fullscreen{
+    max-height: 100vh;
+}
+
 video{
     width: 100%;
 }
@@ -64,3 +79,18 @@ video{
 .video-container:not(.paused) .play-icon{
     display:none;
 }
+
+
+.video-container.theater .tall{
+    display:none;
+}
+.video-container:not(.theater) .wide{
+    display:none;
+}
+.video-container.fullscreen .open{
+    display:none;
+}
+.video-container:not(.fullscreen) .close{
+    display:none;
+}
+
