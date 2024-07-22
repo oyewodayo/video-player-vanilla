@@ -19,6 +19,17 @@ video{
     opacity: 0;
     transition: opacity 150ms ease-in-out;
 }
+
+.video-controls-container::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.75), transparent);
+    width: 100%;
+    aspect-ratio: 6/1;
+    z-index: -1;
+    pointer-events: none;
+}
 .video-container:hover .video-controls-container,
 .video-container:focus-within .video-controls-container,
 .video-container.paused .video-controls-container{
@@ -39,4 +50,17 @@ video{
     height: 30px;
     width: 30px;
     font-size: 1.1rem;
+    cursor: pointer;
+    opacity: .85;
+    transition: opacity 150ms ease-in-out;
+}
+
+.video-controls-container .controls button:hover{
+    opacity: 1;
+}
+.video-container.paused .pause-icon{
+    display:none;
+}
+.video-container:not(.paused) .play-icon{
+    display:none;
 }
